@@ -12,6 +12,12 @@
         android:theme="@style/Theme.MusicQuizApp"
         tools:targetApi="31">
         <activity
+            android:name=".trang_Home"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
             android:name=".PlayActivity"
             android:exported="false" />
         <activity

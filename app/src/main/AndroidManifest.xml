@@ -15,6 +15,12 @@
             android:name=".create_room"
             android:exported="false" />
         <activity
+            android:name=".acctivity_bxh"
+            android:exported="false" />
+        <activity
+            android:name=".RankingActivity"
+            android:exported="false" />
+        <activity
             android:name=".Question_dien_khuyet"
             android:exported="false" />
         <activity

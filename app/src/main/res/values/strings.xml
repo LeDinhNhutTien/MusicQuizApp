@@ -125,4 +125,6 @@
     <string name="biology">Biology</string>
     <string name="more_topics">More topics coming soon!</string>
     <string name="that_s_it">That\'s it!</string>
+    <string name="image_description">Vong tron</string>
+    <string name="image2_description" />
 </resources>

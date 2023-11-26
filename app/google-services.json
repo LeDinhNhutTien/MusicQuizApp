@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "480172454706",
+    "firebase_url": "https://quanlycauhoinhac-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "quanlycauhoinhac",
+    "storage_bucket": "quanlycauhoinhac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480172454706:android:046f8aad1f26e64f3c5d2b",
+        "android_client_info": {
+          "package_name": "com.example.musicquizapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYZ1uPT4TJg4TI9QceAt1JHMdR6Y79vfU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -114,14 +114,12 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Guess the song"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="15dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -173,9 +171,9 @@
 
     <LinearLayout
         android:id="@+id/phan_dien_khuyet"
-        android:layout_width="393dp"
-        android:layout_height="249dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="403dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="15dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -208,50 +206,83 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Chiều mù sương hay mù … … anh"
-            android:textSize="22dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Em không lại, anh nhủ … sao đây?"
-            android:textSize="22dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
     </LinearLayout>
+
+    <RadioButton
+        android:id="@+id/option4RadioButtonDK"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:onClick="onOptionClicked"
+        android:text="Option 4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option3RadioButtonDK"
+        app:layout_editor_absoluteY="200dp"
+        tools:ignore="MissingConstraints" />
+
+    <RadioButton
+        android:id="@+id/option3RadioButtonDK"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onOptionClicked"
+        android:text="Option 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option2RadioButtonDK"
+        app:layout_editor_absoluteY="200dp"
+        tools:ignore="MissingConstraints" />
+
+    <RadioButton
+        android:id="@+id/option2RadioButtonDK"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:onClick="onOptionClicked"
+        android:text="Option 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option1RadioButtonDK"
+        app:layout_editor_absoluteY="200dp"
+        tools:ignore="MissingConstraints" />
+
+    <RadioButton
+        android:id="@+id/option1RadioButtonDK"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onOptionClicked"
+        android:text="Option 1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phan_dien_khuyet"
+        app:layout_editor_absoluteY="200dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="250dp"
         android:layout_height="45dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="NEXT QUESTIONS"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phan_dien_khuyet"
+        app:layout_constraintTop_toBottomOf="@+id/option4RadioButtonDK"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="45dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal"
-        android:layout_marginTop="57dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"

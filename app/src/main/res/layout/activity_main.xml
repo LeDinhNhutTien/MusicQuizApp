@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#350000"
     android:fillViewport="true"
     android:scrollbars="none"
     tools:context=".MainActivity">
@@ -15,69 +16,43 @@
         android:background="@drawable/hinh_nen"
         tools:context=".MainActivity">
 
-        <androidx.cardview.widget.CardView
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginTop="-230dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chinh"
-            app:layout_constraintBottom_toTopOf="@id/cardview2"
-            app:cardBackgroundColor="@color/main_color"
-            app:cardCornerRadius="@dimen/card_corner"
-            app:cardElevation="@dimen/card_elevation"
-            app:contentPadding="@dimen/card_content_padding"
-            android:id="@+id/cardview1"
-            android:layout_width="@dimen/btn_width"
-            android:layout_height="@dimen/btn_height">
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="171dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="506dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="177dp"
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+            android:backgroundTint="@color/Button_color"
 
-                <TextView
-                    android:id="@+id/play"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:text="Login"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_size_5"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            android:text="Login"
+            android:textColor="#090808"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardview1"
-            card_view:cardBackgroundColor="@color/main_color"
-            card_view:cardCornerRadius="@dimen/card_corner"
-            card_view:cardElevation="@dimen/card_elevation"
-            android:layout_marginTop="@dimen/_14"
-            card_view:contentPadding="@dimen/card_content_padding"
-            android:id="@+id/cardview2"
-            android:layout_width="@dimen/btn_width"
-            android:layout_height="@dimen/btn_height">
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="171dp"
+            android:layout_height="48dp"
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+            android:layout_marginStart="120dp"
 
-
-
-                <TextView
-                    android:id="@+id/how"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Register"
-                    android:layout_marginLeft="40dp"
-                    android:textSize="30sp"/>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="118dp"
+            android:backgroundTint="@color/Button_color"
+            android:text="Register"
+            android:textColor="#090808"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

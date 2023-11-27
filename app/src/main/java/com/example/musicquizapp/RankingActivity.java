@@ -20,14 +20,14 @@ public class RankingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bxh);
 
         recyclerView = findViewById(R.id.recyclerView);
-        playerList = generateSampleData(); // Hãy thay thế bằng dữ liệu thực tế của bạn
-
+        playerList = generateSampleData();
+//  thay bằng dữ liệu thực tế
         rankingAdapter = new rankingAdapter(playerList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(rankingAdapter);
     }
 
-    // Hàm này sinh dữ liệu mẫu, bạn cần thay thế nó bằng dữ liệu thực tế của bạn
+    // dữ liệu mẫu
     private List<Player> generateSampleData() {
         List<Player> players = new ArrayList<>();
         players.add(new Player("Player1", 1500));

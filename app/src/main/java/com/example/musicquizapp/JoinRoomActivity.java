@@ -12,7 +12,7 @@ public class JoinRoomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_room);
+        setContentView(R.layout.activity_join_room);
 
     }
 }

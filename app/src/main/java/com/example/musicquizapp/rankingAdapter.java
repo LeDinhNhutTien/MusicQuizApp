@@ -15,7 +15,7 @@ import java.util.List;
 public class rankingAdapter extends RecyclerView.Adapter<rankingAdapter.ViewHolder> {
     private List<Player> playerList;
 
-    // Constructor để truyền vào danh sách người chơi
+
     public rankingAdapter(List<Player> playerList) {
         this.playerList = playerList;
     }
@@ -37,7 +37,7 @@ public class rankingAdapter extends RecyclerView.Adapter<rankingAdapter.ViewHold
         holder.playerNameTextView.setText(player.getName());
         holder.playerScoreTextView.setText(String.valueOf(player.getScore()));
 
-        // Thiết lập màu sắc dựa trên hạng
+
         if (position == 0) {
             holder.rankTextView.setTextColor(Color.YELLOW);
             holder.linearLayout.setBackgroundColor(Color.YELLOW); // Đặt màu cho LinearLayout
@@ -53,18 +53,17 @@ public class rankingAdapter extends RecyclerView.Adapter<rankingAdapter.ViewHold
         }
     }
 
-    // Trả về số lượng mục trong danh sách
+
     @Override
     public int getItemCount() {
         return playerList.size();
     }
 
-    // ViewHolder để giữ các thành phần giao diện người dùng cho mỗi item
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView rankTextView, playerNameTextView, playerScoreTextView;
 
-        LinearLayout linearLayout; // Thêm LinearLayout vào ViewHolder
-
+        LinearLayout linearLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

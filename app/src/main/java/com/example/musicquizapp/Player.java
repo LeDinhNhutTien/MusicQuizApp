@@ -9,6 +9,15 @@ public class Player {
         this.score = score;
     }
 
+    public Player() {
+
+    }
+    public Player( int score) {
+
+        this.score = score;
+    }
+
+
     public String getName() {
         return name;
     }
@@ -23,5 +32,9 @@ public class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public void addScore(){
+        this.score = this.score + 10;
     }
 }

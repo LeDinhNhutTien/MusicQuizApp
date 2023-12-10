@@ -77,9 +77,10 @@ public class My_question extends AppCompatActivity {
                     if(questionCount > numberOfQuestion){
                         Toast.makeText(My_question.this, "Bạn hoàn thành ! điểm số của bạn là" + player.getScore()+ "Điểm", Toast.LENGTH_SHORT).show();
                     }
-                    else
-                    Toast.makeText(My_question.this, "Đúng rồi, bạn được cộng 10 điểm", Toast.LENGTH_SHORT).show();
-                    player.addScore();
+                    else {
+                        Toast.makeText(My_question.this, "Đúng rồi, bạn được cộng 10 điểm", Toast.LENGTH_SHORT).show();
+                        player.addScore();
+                    }
 
                 }else{
                     Toast.makeText(My_question.this, "Sai rồi nè =((", Toast.LENGTH_SHORT).show();

@@ -74,15 +74,19 @@ public class My_question extends AppCompatActivity {
                 RadioButton radioButton = (RadioButton) findViewById(selectedId);
                 String textAnswer = (String) radioButton.getText();
                 if(textAnswer.equals(question.getCorrect_Choice())){
+                    player.addScore();
                     if(questionCount > numberOfQuestion){
-                        Toast.makeText(My_question.this, "Bạn hoàn thành ! điểm số của bạn là" + player.getScore()+ "Điểm", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(My_question.this, "Bạn hoàn thành ! điểm số của bạn là " + player.getScore()+ " Điểm", Toast.LENGTH_SHORT).show();
                     }
                     else {
                         Toast.makeText(My_question.this, "Đúng rồi, bạn được cộng 10 điểm", Toast.LENGTH_SHORT).show();
-                        player.addScore();
+
                     }
 
                 }else{
+                    if(questionCount > numberOfQuestion){
+                        Toast.makeText(My_question.this, "Bạn hoàn thành ! điểm số của bạn là " + player.getScore()+ " Điểm", Toast.LENGTH_SHORT).show();
+                    }
                     Toast.makeText(My_question.this, "Sai rồi nè =((", Toast.LENGTH_SHORT).show();
                 }
                 stopMusic();

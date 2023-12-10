@@ -8,8 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:480172454706:android:046f8aad1f26e64f3c5d2b",
-        "android_client_info": {
+        "mobilesdk_app_id": "1:480172454706:android:046f8aad1f26e64f3c5d2b",        "android_client_info": {
           "package_name": "com.example.musicquizapp"
         }
       },

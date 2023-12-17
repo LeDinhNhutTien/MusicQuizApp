@@ -35,24 +35,36 @@
         android:layout_height="43dp"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter your mobile number"
+        android:inputType="phone"
+        android:hint="Enter Your Phone Number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="MissingConstraints" />
 
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="219dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter your Pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="177dp"
         android:layout_height="39dp"
-        android:layout_marginTop="20dp"
         android:backgroundTint="@color/card_color_1"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
         tools:ignore="MissingConstraints" />
 
     <TextView

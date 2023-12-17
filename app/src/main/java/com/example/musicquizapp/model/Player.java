@@ -8,6 +8,11 @@ public class Player {
     public Player() {
     }
 
+    public Player(String name, int score) {
+        this.Name = name;
+        this.score = score;
+    }
+
     public String getName() {
         return Name;
     }

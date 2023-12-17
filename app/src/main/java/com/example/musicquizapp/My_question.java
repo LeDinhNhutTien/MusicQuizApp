@@ -58,6 +58,9 @@ public class My_question extends AppCompatActivity {
         lstQuestiongenerated = lstQuestion.getLstQuestion();
         initView();
         nextQuestion(questionCount);
+        String url = question.getMediaUrl();
+        new PlayMusicTask().execute(url);
+        isPlaying = true;
         playMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,21 +83,33 @@ public class My_question extends AppCompatActivity {
                 Account account = (Account) intent1.getSerializableExtra("account");
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = (RadioButton) findViewById(selectedId);
-                String textAnswer = (String) radioButton.getText();
-                if(textAnswer.equals(question.getCorrect_Choice())){
-                    player.addScore();
-                    if(questionCount > numberOfQuestion){
-                        Toast.makeText(My_question.this, "Bạn hoàn thành ! điểm số của bạn là " + player.getScore()+ " Điểm", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(My_question.this, "Đúng rồi, bạn được cộng 10 điểm", Toast.LENGTH_SHORT).show();
+                if(radioButton != null ) {
+                    String textAnswer = (String) radioButton.getText();
+                    if (textAnswer.equals(question.getCorrect_Choice())) {
+                        player.addScore();
+                        if (questionCount > numberOfQuestion) {
+                            Toast.makeText(My_question.this, "Bạn hoàn thành ! điểm số của bạn là " + player.getScore() + " Điểm", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(My_question.this, "Đúng rồi, bạn được cộng 10 điểm", Toast.LENGTH_SHORT).show();
 
+                        }
+
+                    } else {
+                        if (questionCount > numberOfQuestion) {
+                            Toast.makeText(My_question.this, "Bạn hoàn thành ! điểm số của bạn là " + player.getScore() + " Điểm", Toast.LENGTH_SHORT).show();
+                        }
+                        Toast.makeText(My_question.this, "Sai rồi nè =((", Toast.LENGTH_SHORT).show();
+                    }
+                    stopMusic();
+                    radioButton.setChecked(false);
+                    if (questionCount > numberOfQuestion) {
+                        Intent intent = new Intent(My_question.this, acctivity_bxh.class);
+                        startActivity(intent);
+                        // hết view hiển thị lên màn hình điểm số của người chơi
+                    } else {
+                        nextQuestion(questionCount);
                     }
 
-                }else{
-                    if(questionCount > numberOfQuestion){
-                        Toast.makeText(My_question.this, "Bạn hoàn thành ! điểm số của bạn là " + player.getScore()+ " Điểm", Toast.LENGTH_SHORT).show();
-                    }
                     Toast.makeText(My_question.this, "Sai rồi nè =((", Toast.LENGTH_SHORT).show();
                 }
                 stopMusic();
@@ -108,7 +123,10 @@ public class My_question extends AppCompatActivity {
                 }
                 else {
                     nextQuestion(questionCount);
+
                 }
+                else
+                    Toast.makeText(My_question.this, "Bạn chưa trả lời mà :((", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -125,6 +143,9 @@ public class My_question extends AppCompatActivity {
         textQuestion.setText( nowQ +"/" + totalQ );
         // gen random question
         question = lstQuestiongenerated.get(nowQuestion);
+        String url = question.getMediaUrl();
+        new PlayMusicTask().execute(url);
+        isPlaying = true;
         textQuestionPlay.setText(question.getQuestion());
 
         ArrayList<String> lstQuestion = new ArrayList<>();

@@ -21,6 +21,12 @@
             android:name=".RankingActivity"
             android:exported="false" />
         <activity
+            android:name=".BXHacctivity"
+            android:exported="false" />
+        <activity
+            android:name=".JoinRoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".Question_dien_khuyet"
             android:exported="false" />
         <activity

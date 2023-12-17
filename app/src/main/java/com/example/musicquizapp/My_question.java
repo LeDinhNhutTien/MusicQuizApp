@@ -18,8 +18,14 @@ import android.widget.Toast;
 
 import com.example.musicquizapp.model.ListQuestion;
 import com.example.musicquizapp.model.Question;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -28,11 +34,11 @@ public class My_question extends AppCompatActivity {
     private RadioGroup radioGroup;
     private int questionCount = 0;
     Question question;
-    boolean isPlaying = false;
-    private static int numberOfQuestion =1; // số lượng câu hỏi
+    boolean isPlaying = true;
+    private static int numberOfQuestion =4; // số lượng câu hỏi
     private MediaPlayer mediaPlayer;
     private ArrayList<Question> lstQuestiongenerated ;
-    private Player player;
+     Player player;
     RadioButton choice1 ;
 
     ImageView playMusic;
@@ -44,7 +50,6 @@ public class My_question extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        player = new Player(0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_question);
         Button buttonLogin = findViewById(R.id.buttonNextQ);
@@ -73,6 +78,9 @@ public class My_question extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent1 = getIntent();
+                player = (Player) intent1.getSerializableExtra("player");
+                Account account = (Account) intent1.getSerializableExtra("account");
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = (RadioButton) findViewById(selectedId);
                 if(radioButton != null ) {
@@ -101,6 +109,21 @@ public class My_question extends AppCompatActivity {
                     } else {
                         nextQuestion(questionCount);
                     }
+
+                    Toast.makeText(My_question.this, "Sai rồi nè =((", Toast.LENGTH_SHORT).show();
+                }
+                stopMusic();
+                radioButton.setChecked(false);
+                if(questionCount > numberOfQuestion){
+                    Intent intent = new Intent(My_question.this, RankingActivity.class);
+                    intent.putExtra("player", (Serializable) player);
+                    intent.putExtra("account", (Serializable) account);
+                    startActivity(intent);
+                    // hết view hiển thị lên màn hình điểm số của người chơi
+                }
+                else {
+                    nextQuestion(questionCount);
+
                 }
                 else
                     Toast.makeText(My_question.this, "Bạn chưa trả lời mà :((", Toast.LENGTH_SHORT).show();
@@ -109,6 +132,7 @@ public class My_question extends AppCompatActivity {
 
 
     }
+
     @Override
     public void onBackPressed() {
         Toast.makeText(My_question.this, "Không được quay lại ở màn hình này", Toast.LENGTH_SHORT).show();

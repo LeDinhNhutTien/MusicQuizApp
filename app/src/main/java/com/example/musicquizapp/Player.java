@@ -1,12 +1,15 @@
 package com.example.musicquizapp;
 
-public class Player {
-    private String name;
-    private int score;
+import java.io.Serializable;
 
-    public Player(String name, int score) {
-        this.name = name;
-        this.score = score;
+public class Player implements Serializable {
+    private String id;
+    private String Name;
+    private int Score;
+
+    public Player(String Name, int Score) {
+        this.Name = Name;
+        this.Score = Score;
     }
 
     public Player() {
@@ -14,27 +17,27 @@ public class Player {
     }
     public Player( int score) {
 
-        this.score = score;
+        this.Score = score;
     }
 
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public int getScore() {
-        return score;
+        return Score;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
     public void setScore(int score) {
-        this.score = score;
+        this.Score = score;
     }
 
     public void addScore(){
-        this.score = this.score + 10;
+        this.Score = this.Score + 10;
     }
 }

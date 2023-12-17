@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class rankingAdapter extends RecyclerView.Adapter<rankingAdapter.ViewHolder> {
@@ -31,6 +33,20 @@ public class rankingAdapter extends RecyclerView.Adapter<rankingAdapter.ViewHold
     // Gắn dữ liệu vào ViewHolder khi được gọi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Collections.sort(playerList, new Comparator<Player>() {
+            @Override
+            public int compare(Player s1, Player s2) {
+                // Sắp xếp giảm dần theo điểm
+                int compareScore = Integer.compare(s2.getScore(), s1.getScore());
+
+                // Nếu điểm giống nhau, sắp xếp tăng dần theo tên
+                if (compareScore == 0) {
+                    return s1.getName().compareTo(s2.getName());
+                }
+
+                return compareScore;
+            }
+        });
         Player player = playerList.get(position);
 
         holder.rankTextView.setText(String.valueOf(position + 1));
@@ -56,7 +72,8 @@ public class rankingAdapter extends RecyclerView.Adapter<rankingAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return playerList.size();
+        // Kiểm tra xem playerList có null hay không trước khi truy xuất size()
+        return playerList != null ? playerList.size() : 0;
     }
 
 
